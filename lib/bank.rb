@@ -1,11 +1,15 @@
 class Account
 
-  def deposit(amount)
+  def credit(amount)
     @balance = amount
   end
 
   def balance
     @balance
+  end
+
+  def debit(amount)
+    @balance -= amount
   end
 
 end
@@ -17,6 +21,7 @@ class Teller
   end
 
   def withdraw_from(account, amount)
+    account.debit(amount)
     @cash_slot.dispense(amount)
   end
 
@@ -31,5 +36,5 @@ class CashSlot
   def dispense(amount)
     @contents = amount
   end
-  
+
 end
