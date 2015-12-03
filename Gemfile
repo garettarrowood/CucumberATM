@@ -1,0 +1,7 @@
+gem 'sinatra'
+
+group :development do
+  gem 'rspec'
+  gem 'cucumber'
+  gem 'capybara'
+end
